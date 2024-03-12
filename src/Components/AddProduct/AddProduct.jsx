@@ -9,6 +9,7 @@ const AddProduct = () => {
       name:"",
       image:"",
       category:"",
+      rating:"",
       new_price:"",
       old_price:"",
       description:""
@@ -77,11 +78,15 @@ const AddProduct = () => {
       <div className="addproduct-itemfield">
         <p>Product category</p>
         <select value={productDetails.category} name="category" className="add-product-selector" onChange={changeHandler}>
-        <option value="papercraft">Paper craft</option>
           <option value="wooden">Wooden</option>
+          <option value="papercraft">Papercraft</option>
           <option value="jute">Jute</option>
         </select> 
       </div>
+        <div className="addproduct-itemfield">
+          <p>Product Rating</p>
+          <input type="text" name="rating" value={productDetails.rating} onChange={(e)=>{changeHandler(e)}} placeholder="Type here" />
+        </div>
       <div className="addproduct-itemfield">
         <p>Product description</p>
         <input type="text" name="description" value={productDetails.description} onChange={(e)=>{changeHandler(e)}} placeholder="Type here" />
